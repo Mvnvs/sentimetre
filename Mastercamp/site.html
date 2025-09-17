@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin:0;
+        }
+        h5 {
+            text-align: center;
+        }
+        
+        h3,h2{
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            margin-top:50px;
+            
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        input[type="submit"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #cc0000;
+        }
+        /* Styles pour le footer */
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            margin-top: 20px; /* Ajoutez ici la valeur de marge supérieure souhaitée */
+            margin-left: 0; /* Ajoutez ici la suppression de la marge à gauche */
+        }
+        
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        footer li {
+            display: inline;
+            margin-right: 10px;
+        }
+        
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        /* Styles pour le head */
+        header {
+            background-color:white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header img {
+            max-width: 300px; /* Ajustez la valeur de max-width selon vos besoins */
+        }
+        .separator {
+            width: 170px;
+            height: 3px;
+            background-color: black;
+            margin: 50px auto;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+            <img src="/static/logo.png" alt="Logo">
+    </header>
+
+    <h3> Analyse des avis utilisateurs </h3>
+    <form action="/run-script" method="POST">
+        <h5>A partir d'une URL</h5>
+        <input type="text" name="link" placeholder="https://www.tripadvisor.com/...">
+        <input type="submit" value="Executer le script">
+    </form>
+    <form action="/process-csv" method="POST" enctype="multipart/form-data">
+        <h5>A partir d'un fichier CSV</h5>
+        <input type="file" name="csv_file" accept=".csv, .tsv">
+        <input type="submit" value="Envoyer">
+    </form>
+    <div class="separator"></div>
+    <h3> Telecharger les avis utilisateurs</h3>
+    <form action="/tocsv" method="POST">
+        <h5>A partir d'une URL</h5>
+        <input type="text" name="link" placeholder="https://www.tripadvisor.com/...">
+        <input type="submit" value="Executer le script">
+    </form>
+    <footer>
+    <br>
+        <ul>
+            <li>Ahkkash Kandasamy</li>
+            <li>Emmanuel Lin</li>
+            <li>Pierre Viscadi</li>
+            <li>Ulysse Delepoulle</li>
+            <li>Thomas Costa</li>
+        </ul>
+        <p>Tous droits reserves &copy; 2023</p>
+        <br>
+    </footer>
+</body>
+</html>

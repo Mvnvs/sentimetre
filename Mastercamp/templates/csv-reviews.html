@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Sentimetre : Decouvrez le Pouvoir des Mots - Analyse de Sentiment</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <style>
+        .download-button {
+          background-color: #ff0000;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+          margin-bottom :40px;
+          margin-top : 40px;
+         
+        }
+    
+        .download-button:hover {
+          background-color: #cc0000;
+        }
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+
+        }    
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            justify-items: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        .image-container p {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #555;
+            font-weight: bold;
+        }
+        .text-container {
+            margin: 20px;
+            font-size: 18px;
+            text-align: justify;
+        }
+        /* Styles pour le footer */
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            margin-top: 20px; /* Ajoutez ici la valeur de marge supérieure souhaitée */
+            margin-left: 0; /* Ajoutez ici la suppression de la marge à gauche */
+        }
+        
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        
+        footer li {
+            display: inline;
+            margin-right: 10px;
+        }
+        
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        /* Styles pour le head */
+        header {
+            background-color:white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header img {
+            max-width: 300px; /* Ajustez la valeur de max-width selon vos besoins */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+            <img src="/static/logo.png" alt="Logo">
+    </header>
+    <h3>Analyse de tous les commentaires</h3>
+    <div class="image-container">
+        <img src="data:image/png;base64,{{ image1 }}" >
+        <img src="data:image/png;base64,{{ image6 }}" >
+    </div>
+    <div class="image-container">
+        <img src="data:image/png;base64,{{ image2 }}" >
+        <p>Fréquence des mots négatifs</p>
+        <img src="data:image/png;base64,{{ image3 }}" >
+        <p>Fréquence des mots positifs</p>
+    </div>
+    <div class="image-container">
+        <p>Nuage des mots négatifs</p>
+        <img src="data:image/png;base64,{{ image5 }}" >
+        <p>Nuage des mots positifs</p>
+        <img src="data:image/png;base64,{{ image4 }}" >
+        
+    </div>
+    <br>
+    <br>    
+    <h3>Récapitulatif</h3>
+    <div class="text-container">
+        <p>{{ text1 }}</p>
+    </div>
+    <button class="download-button" onclick="downloadAsPDF()">Télécharger en PDF</button>
+    <script>
+        function downloadAsPDF() {
+          const element = document.body;
+          html2pdf().from(element).save('Analyse-Reviews.pdf');
+        }
+    </script>
+    <footer>
+        <br>
+        <ul>
+            <li>Ahkkash Kandasamy</li>
+            <li>Emmanuel Lin</li>
+            <li>Pierre Viscadi</li>
+            <li>Ulysse Delepoulle</li>
+            <li>Thomas Costa</li>
+        </ul>
+        <p>Tous droits réservés &copy; 2023</p>
+        <br>
+    </footer>
+</body>
+</html>
