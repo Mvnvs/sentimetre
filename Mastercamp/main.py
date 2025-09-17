@@ -142,7 +142,7 @@ def month_total(df):
 import openai
 
 
-openai.api_key = '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'
+openai.api_key = 'yourapi'
 
 def chat_with_gpt(prompt):
     # Appeler l'API de complétion de ChatGPT
@@ -740,3 +740,4 @@ def process_csv():
 
 if __name__ == '__main__':
     app.run()
+
